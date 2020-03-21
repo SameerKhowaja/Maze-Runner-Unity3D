@@ -15,9 +15,9 @@ TagManager:
   - 
   - PostProcessing
   - ground
-  - 
-  - 
-  - 
+  - Player
+  - Walls
+  - AIBOT
   - 
   - 
   - 
