@@ -5,7 +5,7 @@ using UnityEngine;
 public class spawnBOTScript : MonoBehaviour
 {
     public Transform[] points;
-    public GameObject AI_BOT;
+    public GameObject[] AI_BOT;
 
     public float TimeToSpawn;
     public float ResetTimer;
@@ -15,7 +15,8 @@ public class spawnBOTScript : MonoBehaviour
         if (TimeToSpawn <= 0)
         {
             int randomPoint = Random.Range(0, points.Length);
-            Instantiate(AI_BOT, points[randomPoint].position, Quaternion.identity);
+            int randomBot = Random.Range(0, AI_BOT.Length);
+            Instantiate(AI_BOT[randomBot], points[randomPoint].position, Quaternion.identity);
             TimeToSpawn += ResetTimer;
         }
         else
