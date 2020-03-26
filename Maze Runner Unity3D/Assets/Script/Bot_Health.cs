@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bot_Health : MonoBehaviour
 {
     public float health;
+    public AI_Controller AI;
+    public Animator spiderAnimator;
 
     private void Start()
     {
@@ -16,12 +18,14 @@ public class Bot_Health : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+            AI.enabled = false;
+            spiderAnimator.SetBool("isDie", true);
             DestroyBOT();
         }
     }
 
     void DestroyBOT()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 3f);
     }
 }
