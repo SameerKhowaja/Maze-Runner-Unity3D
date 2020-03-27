@@ -14,6 +14,7 @@ public class gunScript : MonoBehaviour
     public ParticleSystem MuzzleFlash;
     public GameObject hitEffect;
     public Animator GunReload_Animation;
+    public weaponSwitcher weaponSwitcherScript;
 
     float nextTimeToFire;
     int currentAmmo;
@@ -66,6 +67,7 @@ public class gunScript : MonoBehaviour
     {
         MuzzleFlash.Play();
         gunAmmo--;
+        weaponSwitcherScript.TotalFire += 1;
 
         RaycastHit hitInfo;
         if(Physics.Raycast(Gun_Cam.transform.position, Gun_Cam.transform.forward, out hitInfo, range))

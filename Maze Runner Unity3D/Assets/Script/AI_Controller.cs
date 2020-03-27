@@ -9,6 +9,7 @@ public class AI_Controller : MonoBehaviour
     public Transform PlayerPos;
     public PlayerHealth playerHealth;
     public Animator spiderAnimation;
+    public Bot_Health botHealthScript;
 
     public float HitDistance;
 
@@ -20,8 +21,15 @@ public class AI_Controller : MonoBehaviour
 
     private void Update()
     {
-        agent.speed = Random.Range(0.2f, 1f);
-        agent.SetDestination(PlayerPos.position);
+        if(botHealthScript.isDie == false)
+        {
+            agent.speed = Random.Range(0.2f, 1f);
+            agent.SetDestination(PlayerPos.position);
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
+        }
         
         if (Vector3.Distance(this.transform.position, PlayerPos.transform.position) <= HitDistance)
         {

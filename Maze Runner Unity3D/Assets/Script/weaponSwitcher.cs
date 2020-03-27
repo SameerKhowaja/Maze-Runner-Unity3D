@@ -5,6 +5,7 @@ using UnityEngine;
 public class weaponSwitcher : MonoBehaviour
 {
     public int selectedWeapon;
+    public int TotalFire;
 
     public playerMovementScript pmove;
     public Canvas Gun_UI;

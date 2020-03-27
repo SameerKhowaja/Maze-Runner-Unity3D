@@ -1273,6 +1273,7 @@ MonoBehaviour:
   PlayerPos: {fileID: 0}
   playerHealth: {fileID: 0}
   spiderAnimation: {fileID: 352296286385922933}
+  botHealthScript: {fileID: 8991010701586908460}
   HitDistance: 0.58
 --- !u!114 &8991010701586908460
 MonoBehaviour:
@@ -1289,6 +1290,7 @@ MonoBehaviour:
   health: 0
   AI: {fileID: 411623869270888798}
   spiderAnimator: {fileID: 352296286385922933}
+  isDie: 0
 --- !u!1 &411633467062072327
 GameObject:
   m_ObjectHideFlags: 0
